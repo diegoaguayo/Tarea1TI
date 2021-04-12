@@ -11,13 +11,18 @@
   </head>
 
   <body>
+
+
     <%= form_tag(search_page_path, :method => "get",   
       class: 'navbar-form navbar-left') do %>  
+        <%= link_to('PÁGINA DE INICIO', root_path, :class => "button is-dark is-outlined") %>
         <div style="width:800px; margin:0 auto;"> 
         <%= search_field_tag :search, params[:search], placeholder: "Nombre de personaje", class: "form-control" %>  
           <%= button_tag "Buscar", :class => 'btn btn-info glyphicon glyphicon-search',:name => nil%>  
       </div>  
     <% end %>
+
+    
     <%= yield %>
   </body>
 </html>

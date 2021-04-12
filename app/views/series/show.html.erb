@@ -1,12 +1,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
 
-<h1 class="title">Informacion de Breaking bad y Better Call Saul</h1>
 
-<h1 class="title">Nombre</h1>
-    <h2 class="subtitle">
-      <%= @serie.name %>
-    </h2>
+<h1 class="title">Serie: <%= @serie.name.gsub('+', ' ') %></h1>
     
     <table class="table is-striped">
       <tr class="th">

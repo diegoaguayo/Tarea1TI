@@ -4,7 +4,7 @@ class Character
   extend ActiveModel::Naming
 
   
-  def initialize(id, name, occupation, img, status, nicknamec, appearance, better_call_saul_appearance, portrayed, category)
+  def initialize(id, name, occupation, img, status, nickname, appearance, better_call_saul_appearance, portrayed, category)
     @id = id
     @name = name
     @occupation = occupation
@@ -12,8 +12,6 @@ class Character
     @status = status
     @nickname = nickname
     @appearance = appearance
-    puts 'hola'
-    puts appearance
     @better_call_saul_appearance = better_call_saul_appearance
     @portrayed = portrayed
     @category = category

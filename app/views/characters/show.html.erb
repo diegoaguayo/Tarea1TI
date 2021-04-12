@@ -3,14 +3,38 @@
 
 <h1 class="title">Informacion de Personaje</h1>
 
-<table class="table is-striped">
-        <th> <%= "nombre #{@char.name}" %></th>
-          <td> <%= "alias #{@char.nickname}" %> </td>
-          <td> <%= image_tag @char.img %> </td>
+<%= "name: #{@char.name}" %> <br>
+<td> <%= "nickname: #{@char.nickname}" %> <br> </td> 
+<td> <%= "status: #{@char.status}" %> <br> </td> 
+<td> <%= "portrayed: #{@char.portrayed}" %> <br> </td> 
+<td> <%= "Series en las que aparece: #{@char.category}" %> <br> </td> 
+<td> <%= image_tag @char.img , size: '150' %> <br><br></td>
 
-        </tr>
-        <% @char.appearance.each do |season| %>
-        <tr>
-          <td><%= link_to "Season #{season}", series_season_path('Breaking+Bad', season) %>
-        </tr>
-        <% end %>
+</tr>
+
+<p> Frases del Personaje </p>
+
+<% @quotes.each do |q| %>
+  <tr>
+    <%= q['quote'] %> <br>
+  </tr>
+<% end %>
+
+<br>
+<br>
+<p> Temporadas de Breaking Bad en la que aparece </p>
+<% @char.appearance.each do |season| %>
+  <tr>
+    <td><%= link_to "Season #{season}", series_season_path('Breaking+Bad', season) %>
+  </tr>
+<% end %>
+
+
+<p> Temporadas de Better Call Saul en la que aparece </p>
+<% @char.better_call_saul_appearance.each do |season| %>
+  <tr>
+    <td><%= link_to "Season #{season}", series_season_path('Better+Call+Saul', season) %>
+  </tr>
+<% end %>
+
+
