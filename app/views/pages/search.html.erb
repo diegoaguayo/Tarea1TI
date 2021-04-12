@@ -1,0 +1,10 @@
+<h3>Search Result</h3>  
+
+    <% if @characters.empty? %>
+        <p> No se han encotrado resultados para la busqueda, prueba con otra cosa </p>
+    <% end %>
+    <% @characters.each do |result| %>  
+        <tr>
+          <td><%= link_to result['name'], character_path(result['char_id']) %> <br>
+        </tr>
+    <% end %>
